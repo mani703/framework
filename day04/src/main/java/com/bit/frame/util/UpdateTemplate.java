@@ -18,7 +18,7 @@ public abstract class UpdateTemplate {
 		this.conn = conn;
 	}
 
-public void executeUpdate(String sql) throws SQLException {
+	public void executeUpdate(String sql) throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
