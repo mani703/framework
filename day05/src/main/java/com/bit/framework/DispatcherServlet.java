@@ -26,8 +26,7 @@ public class DispatcherServlet extends HttpServlet {
 			handler.setPath(getServletContext().getRealPath("./") + "WEB-INF\\classes\\mapping.properties");
 			this.handler = handler;
 			
-			SimpleViewResolver resolver;
-			resolver = (SimpleViewResolver)Class.forName(prop.getProperty("viewResolver")).newInstance();
+			SimpleViewResolver resolver = (SimpleViewResolver)Class.forName(prop.getProperty("viewResolver")).newInstance();
 			resolver.setPrefix("/WEB-INF/views/");
 			resolver.setSuffix(".jsp");
 			this.resolver = resolver;

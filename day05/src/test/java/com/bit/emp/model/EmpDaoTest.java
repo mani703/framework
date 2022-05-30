@@ -17,12 +17,42 @@ public class EmpDaoTest {
 
 	@Before
 	public void setUp() throws Exception {
-		dao = new EmpDao();
+		dao=new EmpDao();
 	}
 
 	@Test
 	public void testSelectAll() throws SQLException {
-		assertTrue(dao.selectAll().size() > 0);
+		assertTrue(dao.selectAll().size()>0);
 	}
 
+	//@Test
+	public void testInsertOne() throws SQLException {
+//		dao.conn.setAutoCommit(false);
+		EmpVo target=new EmpVo(1015,1000,"test","tester");
+		dao.insertOne(target);
+		
+//		dao=new EmpDao();
+//		dao.conn.setAutoCommit(false);
+//		target=new EmpVo(1010,1000,"test","tester");
+//		try {
+//			dao.insertOne(target);
+//			assertFalse(true);
+//		}catch (Exception e) {
+//			assertFalse(false);
+//		}
+	}
+	
+	@Test
+	public void testDeleteOne() throws SQLException {
+		assertSame(1, dao.deleteOne(1000));
+	}
 }
+
+
+
+
+
+
+
+
+
